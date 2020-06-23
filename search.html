@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <title>選課系統</title>
+    <style>
+      .title {
+        transform: translateX(175%);
+        margin: auto;
+        font-weight: 600;
+      }
+      .utility {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .p-relative {
+        position: relative;
+        display: inline-block;
+      }
+      .p-relative::after {
+        content: '>';
+        font: 16px Consolas, monospace;
+        font-weight: 600;
+        color: #fff;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: -9px;
+        top: 2px;
+        border-radius: 13px;
+        background-color: rgba(17, 83, 253, 1);
+        box-sizing: border-box;
+        position: absolute;
+        pointer-events: none;
+        width: 36px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .nav {
+        background-color: rgba(52, 176, 215, 0.41);
+      }
+      .label {
+        font-weight: 600;
+        width: 80px;
+        display: block;
+        flex-basis: 100%;
+      }
+      .full-input {
+        width: 100%;
+        max-width: 800px;
+      }
+      .three {
+        width: auto;
+      }
+      select.dropdown {
+        padding: 5px 42px 5px 10px;
+        background: #fff;
+        color: #444;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        display: inline-block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        outline: none;
+      }
+      select.dropdown:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #444;
+      }
+      select.dropdown::-ms-expand {
+        display: none;
+      }
+
+      .btn__group {
+        border: 1px solid #efefef;
+        border-radius: 10px;
+        display: inline-block;
+      }
+
+      .btn__group .ck-button:first-child {
+        margin-left: 0;
+      }
+      .btn__group .ck-button:last-child {
+        margin-right: 0;
+      }
+      .btn__group .ck-button:not(:last-child)::after {
+        content: ' ';
+        width: 8px;
+        height: 35px;
+        background: #efefef;
+        border-radius: 5px;
+        position: absolute;
+        right: -15px;
+        top: 2px;
+      }
+
+      .day__btn:hover,
+      .time__btn:hover {
+        background: #3069fd;
+        color: #fff;
+      }
+      .day__btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e5e5e5;
+        color: #000;
+        border: none;
+        border-radius: 50%;
+      }
+      .time__btn {
+        background: #e5e5e5;
+        color: #000;
+      }
+      .submit {
+        border-radius: 30px;
+        width: 300px;
+        height: 60px;
+      }
+      .dropdown-menu {
+        min-width: auto;
+      }
+      /*  */
+      .ck-button {
+        margin: 0 10px;
+        background-color: #efefef;
+        border-radius: 8px;
+        border: none;
+        overflow: visible;
+        float: left;
+        position: relative;
+      }
+
+      .ck-button label {
+        margin: 0;
+      }
+      .ck-button span {
+        text-align: center;
+        padding: 5px;
+        box-sizing: border-box;
+        width: 35px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+
+      .ck-button label input {
+        position: absolute;
+        top: 45%;
+        left: 45%;
+        z-index: -1;
+      }
+
+      .ck-button input:checked + span {
+        background-color: #3069fd;
+        color: #fff;
+      }
+      .ck-button-round,
+      .ck-button-round span {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+      }
+      .ck-button-box,
+      .ck-button-box span {
+        width: 90px;
+        height: 50px;
+      }
+      /*  */
+      @media screen and (min-width: 576px) {
+        .label {
+          display: inline-block;
+          flex-basis: auto;
+        }
+        .three {
+          width: 14vw;
+        }
+        .full-input {
+          width: calc(100% - 60px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="logIn"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="logIn"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title title" id="logIn">登入</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label
+                  for="inlineFormInputGroupUsername2"
+                  class="col-sm-2 col-form-label"
+                  >帳號</label
+                >
+                <div class="input-group col-sm-10">
+                  <input type="text" class="form-control" id="" />
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">＠nccu.edu.tw</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label"
+                  >密碼</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-lg bg-primary text-light mx-auto submit">
+              提交
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="nav navbar navbar-light">
+      <a class="navbar-brand" href="#"><img src="./nccu_logo.png" /></a>
+      <div class="form-inline">
+        <button class="btn btn-lg">
+          <a href="" class="text-dark"><i class="fa fa-camera-retro"></i></a>
+        </button>
+        <button class="nav-item dropdown btn btn-lg">
+          <a
+            class="nav-link dropdown-toggle text-dark"
+            data-toggle="dropdown"
+            href="#"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><i class="fa fa-camera-retro"></i
+          ></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">追蹤清單</a>
+            <a class="dropdown-item" href="#">我的課表</a>
+            <a class="dropdown-item" href="#">檢核</a>
+            <a class="dropdown-item" data-toggle="modal" data-target="#logIn"
+              >登入</a
+            >
+          </div>
+        </button>
+      </div>
+    </nav>
+    <article class="container">
+      <section class="row">
+        <div class="col-12 col-sm-6 mt-4 utility">
+          <label class="label">
+            學年期
+          </label>
+          <span class="p-relative">
+            <select class="dropdown">
+              <option value="">108</option>
+              <option value="">109</option>
+            </select>
+          </span>
+          <div class="btn__group ml-3">
+            <div class="ck-button">
+              <label> <input type="checkbox" value="" /><span>1</span> </label>
+            </div>
+            <div class="ck-button">
+              <label> <input type="checkbox" value="" /><span>2</span> </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 mt-4 utility">
+          <label class="label">級別 </label>
+          <div class="btn__group">
+            <div class="ck-button">
+              <label> <input type="checkbox" value="" /><span>學</span> </label>
+            </div>
+            <div class="ck-button">
+              <label> <input type="checkbox" value="" /><span>碩</span> </label>
+            </div>
+            <div class="ck-button">
+              <label> <input type="checkbox" value="" /><span>博</span> </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="row col-12 my-4">
+        <label class="label">關鍵字</label
+        ><input
+          class="form-control d-inline-block full-input"
+          placeholder="科目代碼、科目名稱、教師姓名、學分數、開課單位、教室、課程屬性、備註/異動資訊"
+        />
+      </section>
+      <section class="row col-12 my-4">
+        <label class="label">
+          開課單位
+        </label>
+        <span class="p-relative">
+          <select class="dropdown three">
+            <option value="" option value="">開課單位</option>
+            <option value="">XX</option>
+          </select>
+        </span>
+        <label class="label"> </label>
+        <span class="p-relative">
+          <select class="dropdown three">
+            <option value="" option value="">開課單位</option>
+            <option value="">XX</option>
+          </select>
+        </span>
+        <label class="label"> </label>
+        <span class="p-relative">
+          <select class="dropdown three">
+            <option value="" option value="">開課單位</option>
+            <option value="">XX</option>
+          </select>
+        </span>
+      </section>
+      <section class="row col-12 my-4">
+        <label class="label">
+          星期
+        </label>
+        <div class="ck-button ck-button-round">
+          <label> <input type="checkbox" value="" /><span>一</span> </label>
+        </div>
+        <div class="ck-button ck-button-round">
+          <label> <input type="checkbox" value="" /><span>二</span> </label>
+        </div>
+        <div class="ck-button ck-button-round">
+          <label> <input type="checkbox" value="" /><span>三</span> </label>
+        </div>
+        <div class="ck-button ck-button-round">
+          <label> <input type="checkbox" value="" /><span>四</span> </label>
+        </div>
+        <div class="ck-button ck-button-round">
+          <label> <input type="checkbox" value="" /><span>五</span> </label>
+        </div>
+        <div class="ck-button ck-button-round">
+          <label> <input type="checkbox" value="" /><span>六</span> </label>
+        </div>
+        <div class="ck-button ck-button-round">
+          <label> <input type="checkbox" value="" /><span>日</span> </label>
+        </div>
+      </section>
+      <section class="row col-12 my-4 utility">
+        <label class="label">起始節次</label>
+        <div class="ck-button ck-button-box m-1">
+          <label> <input type="checkbox" value="" /><span>AB12</span> </label>
+        </div>
+        <div class="ck-button ck-button-box m-1">
+          <label> <input type="checkbox" value="" /><span>34CD</span> </label>
+        </div>
+        <div class="ck-button ck-button-box m-1">
+          <label> <input type="checkbox" value="" /><span>5678</span> </label>
+        </div>
+        <div class="ck-button ck-button-box m-1">
+          <label> <input type="checkbox" value="" /><span>EFGH</span> </label>
+        </div>
+      </section>
+      <section class="row col-12 mt-4">
+        <button class="btn btn-lg bg-primary text-light mx-auto submit">
+          送出
+        </button>
+      </section>
+    </article>
+  </body>
+</html>
