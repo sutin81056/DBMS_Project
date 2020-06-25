@@ -1,0 +1,497 @@
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #F5DEB3;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #2c3e50;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family: 'Noto Sans TC', sans-serif;
+    --font-family-monospace: 'Noto Sans TC', sans-serif, monospace;
+}
+
+body {
+    font-size: 0.9rem;
+    scroll-behavior: smooth;
+}
+
+.title {
+    transform: translateX(175%);
+    margin: auto;
+    font-weight: 400;
+}
+
+.navbar-toggler {
+    padding: .5rem .5rem;
+    font-size: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1rem;
+}
+
+
+.utility {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+.p-relative {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.p-relative::after {
+    content: 'v';
+    font: 1.2rem Consolas, monospace;
+    padding-bottom: 2px;
+    font-weight: 400;
+    color: #fff;
+    right: -9px;
+    top: 0px;
+    border-radius: 10px;
+    background-color: var(--primary);
+    box-sizing: border-box;
+    position: absolute;
+    pointer-events: none;
+    width: 36px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    text-align: right;
+    font-weight: 400;
+    width: 80px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.full-input {
+    width: 100%;
+}
+
+.three {
+    width: auto;
+}
+
+select.dropdown {
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 40px;
+    padding-left: 7px;
+    background: #fff;
+    color: #444;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+select.dropdown:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #444;
+}
+
+select.dropdown::-ms-expand {
+    display: none;
+}
+
+.btn__group {
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.btn__group .ck-button:first-child {
+    margin-left: 0;
+}
+
+.btn__group .ck-button:last-child {
+    margin-right: 0;
+}
+
+.btn__group .ck-button:not(:last-child)::after {
+    content: ' ';
+    width: 6px;
+    height: 36px;
+    background: #efefef;
+    border-radius: 5px;
+    position: absolute;
+    right: -14px;
+    top: 2px;
+}
+
+.btn-round {
+    background: white;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
+
+.ck-button:hover {
+    background: gray;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.submit {
+    border-radius: 30px;
+    width: 250px;
+    height: 50px;
+}
+
+.dropdown-menu {
+    min-width: auto;
+}
+
+/*  */
+
+.ck-button {
+    margin: 0 10px;
+    background-color: #efefef;
+    border-radius: 8px;
+    border: none;
+    overflow: visible;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+
+.ck-button label {
+    margin: 0;
+}
+
+.ck-button span {
+    text-align: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.ck-button label input {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: -1;
+}
+
+.ck-button input:checked+span {
+
+    background-color: #3069fd;
+    color: #fff;
+}
+
+
+
+.ck-button-box,
+.ck-button-box span {
+    width: 5rem;
+    height: 2.5rem;
+}
+
+/*  */
+
+@media screen and (min-width: 576px) {
+
+
+    .three {
+        width: 14vw;
+    }
+
+    .full-input {
+        width: calc(100%);
+    }
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.course_credit,
+.course_syllabus,
+.add_to_list,
+.course_detail {}
+
+.rwd-table {
+    background: #fff;
+    overflow: hidden;
+    font-size: 0.8rem;
+
+}
+
+.rwd-table tr:nth-of-type(2n) {
+    background: #eee;
+}
+
+.rwd-table th,
+.rwd-table td,
+.timetable th,
+.timetable td {
+    margin: 0.5em 1em;
+}
+
+.rwd-table {
+    min-width: 100%;
+    text-align: center;
+}
+
+.timetable {
+    font-size: 0.5rem;
+    table-layout: fixed;
+    min-width: 100%;
+    max-width: screen;
+}
+
+.rwd-table th,
+.timetable th {
+    display: none;
+}
+
+.rwd-table td,
+.timetable td {
+    display: block;
+}
+
+.rwd-table td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    width: 10em;
+    display: inline-block;
+}
+
+
+
+.rwd-table th,
+.rwd-table td {
+    text-align: center;
+}
+
+.rwd-table th,
+.timetable th,
+.rwd-table td:before {
+    text-align: center;
+    color: #3069fd;
+    font-weight: bold;
+}
+
+.timetable th,
+.timetable td {
+    text-align: center;
+    display: table-cell;
+}
+
+.order,
+.course_year_semester,
+.course_name,
+.course_name,
+.teacher_name,
+.course_time,
+.course_credit,
+.course_unit,
+.course_syllabus,
+.btn-round,
+.add_to_list,
+.course_detail,
+.course_score,
+.course_graduate {
+    text-align: center;
+
+}
+
+.course_info {
+    text-align: left;
+}
+
+@media (min-width: 900px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .rwd-table {
+        text-align: left;
+    }
+
+    .rwd-table td:before {
+        display: none;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        display: table-cell;
+        padding: 0.25em 0.5em;
+    }
+
+    .rwd-table th:first-child,
+    .rwd-table td:first-child {
+        padding-left: 0;
+    }
+
+    .rwd-table th:last-child,
+    .rwd-table td:last-child {
+        padding-right: 0;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        padding: 1em !important;
+    }
+}
+
+/* list group*/
+
+
+.accordion {
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.8rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 15px 15px 0 0;
+    margin-top: 10px;
+    display: block;
+    margin: auto;
+
+
+}
+
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 1rem;
+    color: white;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    color: white;
+    /* Unicode character for "minus" sign (-) */
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active,
+.accordion:hover {
+    color: white;
+    background-color: var(--info);
+}
+
+.badge {
+    font-size: 1rem;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+
+.panel {
+    padding: 0px;
+    background-color: white;
+    max-height: 0;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.container-1 {
+    width: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    justify-content: center;
+}
+
+.container-1 .icon {
+    position: absolute;
+    top: 50%;
+    margin-left: 17px;
+    margin-top: 17px;
+    z-index: 1;
+    color: white;
+}
+
+.container-1 input#search {
+    width: 80%;
+    height: 50px;
+    background: #f7c143;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.container-1 input#search::-webkit-input-placeholder {
+    color: white;
+}
+
+.container-1 input#search:-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+}
+
+.container-1 input#search::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+}
+
+.container-1 input#search:-ms-input-placeholder {
+    color: white;
+}

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="img/sm_nccu.png" type="image/png">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"/>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/gotop.css">
+
+    <title>選課系統</title>
+
+  </head>
+  <body>
+    <!-- Modal Login-->
+    <div
+      class="modal fade"
+      id="logIn"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="logIn"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title title" id="logIn">登入</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label
+                  for="inlineFormInputGroupUsername2"
+                  class="col-sm-2 col-form-label"
+                  >帳號</label
+                >
+                <div class="input-group col-sm-10">
+                  <input type="text" class="form-control" id="login_account" placeholder="請輸入帳號">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">＠nccu.edu.tw</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label"
+                  >密碼</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="login_password"
+                    placeholder="請輸入密碼"
+>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-lg bg-primary text-light mx-auto submit">
+              送出
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal course_detail-->
+    <div
+      class="modal fade"
+      id="course_detail"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="course_detail"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title title" >登入</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <label
+                  for="inlineFormInputGroupUsername2"
+                  class="col-sm-2 col-form-label"
+                  >帳號</label
+                >
+                <div class="input-group col-sm-10">
+                  <input type="text" class="form-control" id=""/>
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">＠nccu.edu.tw</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label"
+                  >密碼</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="inputPassword"
+/>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-lg bg-primary text-light mx-auto submit">
+              送出
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav navbar navbar-light bg-light navbar-expand-lg" id="nav">
+
+      <a class="navbar-brand" href="#"><img src="img/nccu_logo.png" width="30px"/> 國立政治大學選課系統</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-right" id="navbarToggler">
+        <ul class="navbar-nav">
+          <li class="nav-item ">
+
+            <a class="nav-link" href="index.html" >
+              <i class="fa fa-search"></i>
+              <span >查詢課程</span>
+            </a>
+
+          </li>
+          <li class="nav-item dropdown">
+
+            <a
+            class="nav-link dropdown-toggle "
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            id="navbarDropdownMenuLink">
+              <i class="fa fa-user"></i>
+              <span>個人頁面</span>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="list.html">追蹤清單</a>
+              <a class="dropdown-item" href="timetable.html">我的課表</a>
+              <a class="dropdown-item" href="check.html">修課檢核</a>
+              <a class="dropdown-item" data-toggle="modal" data-target="#logIn">登入</a>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--gotop btn-->
+    <div class="scroll-top page-scroll show-scrollTop">
+      <button class="btn btn-primary" onclick="location.href='#nav'">
+        <i class="fa fa-arrow-up"></i>
+      </button>
+    </div>
+    <!--main-->
+    <div class="container">
+      <div class="row">
+        <div class="col-2 mt-3 utility " >
+          <label class="label">學年期</label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <span class="p-relative">
+            <select class="dropdown">
+              <option value="108">108</option>
+              <option value="107">107</option>
+              <option value="0">all</option>
+            </select>
+          </span>
+          <div class="btn__group ml-3">
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>1</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>2</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 mt-3 utility " >
+          <label class="label">系所級別</label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <div class="btn__group">
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="0"/>
+                <span>學</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="1"/>
+                <span>碩</span>
+              </label>
+            </div>
+            <div class="ck-button">
+              <label>
+                <input type="checkbox" value="2"/>
+                <span>博</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-2 mt-3 utility" >
+          <label class="label">關鍵字</label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <input 
+          class="form-control d-inline-block full-input"
+          placeholder="科目代碼、科目名稱、教師姓名、學分數、開課單位、教室、課程屬性、備註／異動資訊"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 mt-3 utility" >
+          <label class="label">
+          開課單位
+        </label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <span class="p-relative">
+            <select class="dropdown three" style="width:100%">
+              <option value="" option value="">
+
+                -----請選擇Choose-----</option>
+              <option value="">XXXXXXXXX</option>
+            </select>
+          </span>
+        </div>
+        <div class="col-2 mt-3 utility">
+          <label class="label"></label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <span class="p-relative">
+            <select class="dropdown three" style="width:100%">
+              <option value="" option value="">
+
+                -----請選擇Choose-----</option>
+              <option value="">XXXXXXXXX</option>
+            </select>
+          </span>
+        </div>
+        <div class="col-2 mt-3 utility">
+          <label class="label"></label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <span class="p-relative">
+            <select class="dropdown three" style="width:100%">
+              <option value="" option value="">
+
+                -----請選擇Choose-----</option>
+              <option value="">整開／通識</option>
+            </select>
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 mt-3 utility" >
+          <label class="label">
+          星期
+        </label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <div class="btn__group">
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>一</span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>二</span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>三</span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>四</span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>五</span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>六</span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span>日</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2 mt-3 utility" >
+          <label class="label">起始節次</label>
+        </div>
+        <div class="col-10  mt-3 utility ">
+          <div class="btn__group">
+            <div class="ck-button  ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span> AB12 </span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span> 34CD </span>
+              </label>
+            </div>
+            <div class="ck-button  ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span> 5678 </span>
+              </label>
+            </div>
+            <div class="ck-button ">
+              <label>
+                <input type="checkbox" value=""/>
+                <span> EFGH </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="row mt-3 mb-4">
+        <div class="col-12 text-center">
+          <button class="btn btn-lg bg-primary text-light mx-auto submit">
+          送出
+          </button>
+        </div>
+      </section>
+    </div>
+    <!--search result-->
+    <nav aria-label="Page navigation ">
+
+      <ul class="pagination">
+        <li>每頁筆數：</li>
+        <li>
+          <form>
+            <div class="form-row align-items-center">
+              <div class="col-auto my-1 mr-3">
+
+                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">每頁筆數</label>
+
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                  <option value="50"selected>50</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                </select>
+              </div>
+
+            </div>
+          </form>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="First">
+            <i class="fa fa-step-backward"></i>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <i class="fa fa-caret-left"></i>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <i class="fa fa-caret-right"></i>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Last">
+            <i class="fa fa-step-forward"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <table class="table table-striped table-hover rwd-table">
+      <thead class="text-center">
+        <tr>
+          <th class="order" scope="col">#</th>
+          <th class="course_year_semester" scope="col">學年期</th>
+          <th class="course_name" scope="col">科目代碼</th>
+          <th rowspan="2" class="course_name" scope="col">科目名稱</th>
+          <th class="teacher_name" scope="col">教師姓名</th>
+          <th class="course_time" scope="col">時間</th>
+          <th class="course_credit" scope="col">學分</th>
+          <th class="course_unit" scope="col">開課單位</th>
+          <th rowspan="2" class="course_info" scope="col">備註</th>
+          <th class="course_syllabus add_to_list course_detail" scope="col">大綱｜追蹤｜更多</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th data-th="#" class="order" scope="row">1</th>
+          <td data-th="學年期：" class="course_year_semester" >1082</td>
+          <td data-th="科目代碼：" class="course_name" >703025001</td>
+          <td data-th="科目名稱：" rowspan="2" class="course_name" >資料庫系統</td>
+          <td data-th="教師姓名：" class="teacher_name" >沈錳坤</td>
+          <td data-th="時間：" class="course_time" >五D56</td>
+          <td data-th="學分：" class="course_credit" >3.0</td>
+          <td data-th="開課單位：" class="course_unit" >資科三／四</td>
+          <td data-th="備註："rowspan="2" class="course_info" >無</td>
+          <td data-th="大綱｜追蹤｜更多：" class="course_syllabus add_to_list course_detail" >
+            <button class="btn btn-round">
+              <a href="syllabus.html" >
+                <i class="fa fa-book"></i>
+              </a>
+            </button>
+            <!--add_to_list-->
+            <button class="btn btn-round" onclick="add_to_list()">
+              <a href="">
+                <i class="fa fa-plus-circle"></i>
+              </a>
+            </button>
+            <!--modal?link?-->
+            <button class="btn btn-round">
+              <a href=" " data-toggle="modal" data-target="#course_detail">
+                <i class="fa fa-angle-double-right"></i>
+              </a>
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <footer class="mt-5  bg-dark text-light text-center">
+      <br>
+      <p>NCCU DBMS2020</p>
+      <p>組員：林以珊、簡哲元、王子翔、劉煥澤、陳聖諺</p>
+      <br>
+    </footer>
+
+  </body>
+</html>
