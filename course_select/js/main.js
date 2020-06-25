@@ -1,12 +1,3 @@
-let Monday = document.getElementsByClassName("Monday");
-let Tuesday = document.getElementsByClassName("Tuesday");
-let Wednesday = document.getElementsByClassName("Wednesday");
-let Thursday = document.getElementsByClassName("Thursday");
-let Friday = document.getElementsByClassName("Friday");
-let Saturday = document.getElementsByClassName("Saturday");
-let Sunday = document.getElementsByClassName("Sunday");
-let week = [Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday];
-
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -124,6 +115,12 @@ function dataHierarchy() {
     Integrated_Courses_General_Education[i++] = new node("整開", ["-----請選擇Choose-----", "管理學", "統計學", "經濟學", "行政學", "行銷管理", "投資學", "社會學", "政治學", "初級會計學（一）", "初級會計學（二）", "中級會計學（一）", "中級會計學（二）", "中級會計學（三）", "成本管理會計（一）", "民法概要", "個體經濟學", "財政學", "財務管理", "國際關係", "貨幣銀行學", "軟體應用導論", "普通心理學", "資訊管理", "數理統計學", "總體經濟學", "商事法", "資料處理", "稅務會計", "審計學（一）", "審計學（二）", "成本管理會計（二） ", "社會責任與倫理", "華語特別班 ", "學術英文"]);
     Integrated_Courses_General_Education[i++] = new node("通識", ["-----請選擇Choose-----", "中國語文類通識", "外國語文類通識", "人文學類通識", "社會科學類通識", "自然科學類通識", "跨領域類通識", "書院通識"]);
 
+    //輔系 學分專班
+    var minor_credit_program = new Array();
+    var i = 0;
+    minor_credit_program[i++] = new node("輔系專班", ["中輔", "外輔", "貿輔", "會輔", "英輔", "日輔", "韓輔", "法輔"]);
+    minor_credit_program[i++] = new node("學分學程專班", ["台灣與近代世界學程 ", "文化、 傳播與現代社會學程 ", "創意學程 ", "華語文教學學分學程 ", "人文學程 ", "中國大陸研究跨領域學程 ", "東北亞語言與文化學程 ", "斯拉夫語文學程 ", "中東語言與文化學程 ", "調查研究方法菁英學分學程 ", "社會科學榮譽學程 ", "外文中心歐洲語言與文化學程 ", "國際事務學院涉外事務與談判學程 ", "外語傳播第二專長學程 ", "英語商管學程 ", "英語文榮譽學程 ", "人文榮譽學程 ", "法律與會計碩士學程 ", "藝術產業經營學程 ", " 生物科技管理學程 ", "台灣人文數位典藏與應用學程 ", "東南亞語文學分學程 ", "性別研究跨領域學程 ", "日本研究碩士學分學程 ", "專利學分學程 ", "歐洲聯盟研究碩士學分學程 ", "全球政府採購學分學程 ", "翻譯與跨文化學分學程 ", "供應鏈管理學分學程 ", "數理財務學分學程 ", "語言、 認知與大腦 ", "社會創新領袖學分學程 ", "博雅榮譽學分學程 ", "外語專長商管學分學程 ", "創意設計實務學分學程 ", "電子物理學分學程 ", "國際經貿談判人才培育跨校學分學程 ", "國際事務學院英語授課學分學程 ", "傳播學院國際傳播英語學分學程 ", "社會科學學院英語授課學分學程 ", "法學院英語授課學分學程 ", "理學院英語授課學分學程 ", "教育學院英語授課學分學程 ", "外國語文學院世界文化英語學分學程 ", "文學院英語學分學程 ", "大腦科學學分學程 ", "日本文化與經濟學分學程 ", "人文創新學程 ", "全球治理英語學分學程 "]);
+    minor_credit_program[i++] = new node("教學實習與實務", []);
 
     //理學院
     var Science = new Array();
@@ -145,9 +142,10 @@ function dataHierarchy() {
     var Thecourse = new Array();
     var i = 0;
     Thecourse[i++] = new node("-----請選擇Choose-----", Empty);
-    Thecourse[i++] = new node("Printemps", Integrated_Courses_General_Education);
-    Thecourse[i++] = new node("BiBi", Science);
-    Thecourse[i++] = new node("lilywhite", LLlilywhite);
+    Thecourse[i++] = new node("整開/通識", Integrated_Courses_General_Education);
+    Thecourse[i++] = new node("輔系/學分專班", minor_credit_program);
+    Thecourse[i++] = new node("理學院", Science);
+
 
     return (Thecourse);
 }
