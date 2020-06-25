@@ -34,8 +34,9 @@
     <title>選課系統</title>
 
   </head>
-  <body>
+  <body >
     <!-- Modal Login-->
+    <!--如果已經登入就不會跳，登入功能我之前是用後端＋cookie做的，麻煩後端幫忙改一下，如果有困難的話就幫我把下面註解掉，我有額外做一個login.html，每個分頁的導覽列連結都要記得改～-->
     <div
       class="modal fade"
       id="logIn"
@@ -96,66 +97,6 @@
       </div>
     </div>
 
-    <!-- Modal course_detail-->
-    <div
-      class="modal fade"
-      id="course_detail"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="course_detail"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title title" >登入</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group row">
-                <label
-                  for="inlineFormInputGroupUsername2"
-                  class="col-sm-2 col-form-label"
-                  >帳號</label
-                >
-                <div class="input-group col-sm-10">
-                  <input type="text" class="form-control" id=""/>
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">＠nccu.edu.tw</div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label"
-                  >密碼</label
-                >
-                <div class="col-sm-10">
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="inputPassword"
-/>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-lg bg-primary text-light mx-auto submit">
-              送出
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <nav class="nav navbar navbar-light bg-light navbar-expand-lg" id="nav">
 
       <a class="navbar-brand" href="#"><img src="img/nccu_logo.png" width="30px"/> 國立政治大學選課系統</a>
@@ -190,8 +131,9 @@
             id="navbarDropdownMenuLink">
               <i class="fa fa-user"></i>
               <span>個人頁面</span>
-            </a>
 
+            </a>
+            <!--裡面都是要登入才能用的-->
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="list.html">追蹤清單</a>
               <a class="dropdown-item" href="timetable.html">我的課表</a>
@@ -499,81 +441,78 @@
           <td data-th="開課單位：" class="course_unit" >資科三／四</td>
           <td data-th="備註："rowspan="2" class="course_info" >無</td>
           <td data-th="大綱｜追蹤｜更多：" class="course_syllabus add_to_list course_detail" >
-            <button class="btn btn-round" onclick="location.href='syllabus.html'">
-              <a href="syllabus.html" >
-                <i class="fa fa-book"></i>
-              </a>
+            <button class="btn btn-round" onclick="window.open('https://newdoc.nccu.edu.tw/teaschm/1082/schmPrv.jsp-yy=108&smt=2&num=703025&gop=00&s=1.html')">
+              <i class="text-primary fa fa-book"></i>
+              <!--syllabus 裡面太多東西了，就用現有的然後改url吧ＸＤ 可以用js的slice 或是python好像也有
+                        https://newdoc.nccu.edu.tw/teaschm/1082/schmPrv.jsp-yy=108&smt=2&num=703025&gop=00&s=1.html-->
             </button>
             <!--add_to_list-->
-            <button class="btn btn-round" onclick="add_to_list()">
-
+            <button class="btn btn-round" onclick=" ">
+            <!--add_to_list()看後端想怎麼拿資料-->
               <i class="text-primary fa fa-plus-circle"></i>
+          </button>
+          <!--modal?link?-->
+          <button class="btn btn-round" onclick="window.open('course_detail.html')">
+            <i class="text-primary fa fa-angle-double-right"></i>
+          </button>
+        </td>
+      </tr>
 
-            </button>
-            <!--modal?link?-->
-            <button class="btn btn-round" onclick="location.href='course_detail.html'">
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation " >
 
-              <i class="text-primary fa fa-angle-double-right"></i>
+    <ul class="pagination ">
+      <li>每頁筆數：</li>
+      <li>
+        <form>
+          <div class="form-row align-items-center">
+            <div class="col-auto my-1 mr-3">
 
-            </button>
-          </td>
-        </tr>
+              <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">每頁筆數</label>
 
-      </tbody>
-    </table>
-    <nav aria-label="Page navigation " >
-
-      <ul class="pagination ">
-        <li>每頁筆數：</li>
-        <li>
-          <form>
-            <div class="form-row align-items-center">
-              <div class="col-auto my-1 mr-3">
-
-                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">每頁筆數</label>
-
-                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                  <option value="50"selected>50</option>
-                  <option value="100">100</option>
-                  <option value="200">200</option>
-                </select>
-              </div>
-
+              <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                <option value="50"selected>50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+              </select>
             </div>
-          </form>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="First">
-            <i class="fa fa-step-backward"></i>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <i class="fa fa-caret-left"></i>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
 
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <i class="fa fa-caret-right"></i>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Last">
-            <i class="fa fa-step-forward"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <footer class="mt-5  bg-dark text-light text-center">
-      <br>
-      <p>NCCU DBMS2020</p>
-      <p>組員：林以珊、簡哲元、王子翔、劉煥澤、陳聖諺</p>
-      <br>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
+          </div>
+        </form>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="First">
+          <i class="fa fa-step-backward"></i>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <i class="fa fa-caret-left"></i>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <i class="fa fa-caret-right"></i>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Last">
+          <i class="fa fa-step-forward"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <footer class="mt-5  bg-dark text-light text-center">
+    <br>
+    <p>NCCU DBMS2020</p>
+    <p>組員：林以珊、簡哲元、王子翔、劉煥澤、陳聖諺</p>
+    <br>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
 </html>
