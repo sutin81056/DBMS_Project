@@ -90,34 +90,90 @@
                                 <div class="col-lg-3">
                                     <p>系級：<span class="student_grade">教育四</span></p>
                                 </div>
-                                <div class="col-lg-3">
-                                    <p>總學分：<span class="total_credit">166</span></p>
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-danger">總學分</span>：<span id="total_credit">166</span></p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-danger">總平均</span>：<span id="total_score">88.8</span></p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-danger">等第</span>：<span id="total_grade">
+                                            <!--這裡已經用js自動算好-->
+                                        </span>
+                                    </p>
                                 </div>
                             </div >
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <p>雙主修：<span class="double_major">數位內容與科技學位學程</span></p>
+                                    <p>主修：<span class="major">教育學系</span></p>
+                                </div>
+                                <!--
+                                <div class="col-lg-2">
+                                    <p >
+                                        <span class="badge badge-primary">必修</span>：<span class="major_credit_require">3</span>學分</p>
                                 </div>
                                 <div class="col-lg-2">
-                                    <p>必修：<span class="double_major_credit_require">3</span>學分</p>
+                                    <p>
+                                        <span class="badge badge-warning">群修</span>：<span class="major_credit_patially_require">3</span>學分</p>
                                 </div>
                                 <div class="col-lg-2">
-                                    <p>群修：<span class="double_major_credit_patially_require">3</span>學分</p>
+                                    <p>
+                                        <span class="badge badge-secondary">選修</span>：<span class="major_credit_elective">3</span>學分</p>
                                 </div>
-                                <div class="col-lg-2">
-                                    <p>選修：<span class="double_major_credit_elective">3</span>學分</p>
-                                </div>
+                                -->
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <p>雙主修：<span class="double_major">數位內容與科技學位學程</span></p>
                                 </div>
+                                <!--
+                                <div class="col-lg-2">
+                                    <p >
+                                        <span class="badge badge-primary">必修</span>：<span class="double_major_credit_require">3</span>學分</p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-warning">群修</span>：<span class="double_major_credit_patially_require">3</span>學分</p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-secondary">選修</span>：<span class="double_major_credit_elective">3</span>學分</p>
+                                </div>
+                                -->
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-6">
                                     <p>輔系一：<span class="minor_one">心理學系（106）</span></p>
                                 </div>
+                                <!--
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-primary">必修</span>：<span class="minor_one_credit_require">3</span>學分</p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-secondary">選修</span>：<span class="minor_one_credit_elective">3</span>學分</p>
+                                </div>
+                                -->
+
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-6">
                                     <p>輔系二：<span class="minor_two">資訊科學系（108）</span></p>
                                 </div>
+                                <!--
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-primary">必修</span>：<span class="minor_two_credit_require">3</span>學分</p>
+                                </div>
+                                <div class="col-lg-2">
+                                    <p>
+                                        <span class="badge badge-secondary">選修</span>：<span class="minor_two_credit_elective">3</span>學分</p>
+                                </div>-->
+
                             </div>
 
                         </div>
@@ -125,35 +181,63 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-primary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_required">9</span> 必修 Required</button>
+                        <span class="badge badge-pill badge-dark ">
+                            <span class="total_credit_required">5</span> 學分</span> 必修 Required</button>
                     <div class="panel">
-                        <table class="table table-striped table-hover ">
+                        <table class="table table-striped table-hover required">
                             <thead>
                                 <tr>
                                     <th colspan="2" scope="col" class="course_name">課程名稱</th>
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="2" class="course_name">資料庫系統</td>
-                                    <td class="course_year_semester">1082</td>
-                                    <td class="course_credit">3.0</td>
-                                    <td class="course_score">100.0</td>
+                                    <td colspan="2" class="course_name">中等學校教學實習</td>
+                                    <td class="course_year_semester">1081</td>
+                                    <td class="course_credit">2.0</td>
+                                    <td class="course_score">93.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" class="course_name">資料庫系統</td>
-                                    <td class="course_year_semester">1082</td>
+                                    <td colspan="2" class="course_name">教育心理學</td>
+                                    <td class="course_year_semester">1062</td>
                                     <td class="course_credit">3.0</td>
                                     <td class="course_score">100.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <button class="accordion bg-primary text-white">
+                        <span class="badge badge-pill badge-dark ">
+                            <span class="total_credit_service_learning">1</span>
+                         門</span> 服務 Service-Learning</button>
+                    <div class="panel">
+                        <table class="table table-striped table-hover service_learning">
+                            <thead>
                                 <tr>
-                                    <td colspan="2" class="course_name">資料庫系統</td>
-                                    <td class="course_year_semester">1082</td>
-                                    <td class="course_credit">3.0</td>
-                                    <td class="course_score">100.0</td>
+                                    <th colspan="2" scope="col" class="course_name">課程名稱</th>
+                                    <th scope="col" class="course_year_semester">學年期</th>
+                                    <th scope="col" class="course_credit">學分</th>
+                                    <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2" class="course_name">認證型服務課程</td>
+                                    <td class="course_year_semester">1052</td>
+                                    <td class="course_credit">0.0</td>
+                                    <td class="course_score">0.0</td>
+                                    <td class="course_note">通過</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -161,47 +245,26 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-primary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_service_learning">3</span> 服務 Service-Learning</button>
+                        <span class="badge badge-pill badge-dark ">
+                            <span class="total_credit_physical_education">1</span> 門</span> 體育 Physical Education</button>
                     <div class="panel">
-                        <table class="table table-striped table-hover ">
+                        <table class="table table-striped table-hover physical_education">
                             <thead>
                                 <tr>
                                     <th colspan="2" scope="col" class="course_name">課程名稱</th>
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="2" class="course_name">資料庫系統</td>
-                                    <td class="course_year_semester">1082</td>
-                                    <td class="course_credit">3.0</td>
-                                    <td class="course_score">100.0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <button class="accordion bg-primary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_physical_education">3</span> 體育 Physical Education</button>
-                    <div class="panel">
-                        <table class="table table-striped table-hover ">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" scope="col" class="course_name">課程名稱</th>
-                                    <th scope="col" class="course_year_semester">學年期</th>
-                                    <th scope="col" class="course_credit">學分</th>
-                                    <th scope="col" class="course_score">成績</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="2" class="course_name">資料庫系統</td>
-                                    <td class="course_year_semester">1082</td>
-                                    <td class="course_credit">3.0</td>
-                                    <td class="course_score">100.0</td>
+                                    <td colspan="2" class="course_name">體育[男女合班]—健康體適能</td>
+                                    <td class="course_year_semester">1081</td>
+                                    <td class="course_credit">0.0</td>
+                                    <td class="course_score">90.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -209,24 +272,34 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                    <button class="accordion bg-primary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_partially_required">3</span> 群修 Partially Required</button>
+                    <button class="accordion bg-warning text-white">
+                        <span class="badge badge-pill badge-dark ">
+                            <span class="total_credit_partially_required">5</span> 學分</span> 群修 Partially Required</button>
                     <div class="panel">
-                        <table class="table table-striped table-hover ">
+                        <table class="table table-striped table-hover partially_required">
                             <thead>
                                 <tr>
                                     <th colspan="2" scope="col" class="course_name">課程名稱</th>
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="2" class="course_name">資料庫系統</td>
+                                    <td colspan="2" class="course_name">特殊教育導論</td>
                                     <td class="course_year_semester">1082</td>
                                     <td class="course_credit">3.0</td>
-                                    <td class="course_score">100.0</td>
+                                    <td class="course_score">92.0</td>
+                                    <td class="course_note">群A</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="course_name">綜合活動領域教學實習</td>
+                                    <td class="course_year_semester">1082</td>
+                                    <td class="course_credit">2.0</td>
+                                    <td class="course_score">93.0</td>
+                                    <td class="course_note">群B</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -234,15 +307,17 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-secondary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_elective">3</span> 選修 Elective</button>
+                        <span class="badge badge-pill badge-light ">
+                            <span class="total_credit_elective">3</span> 學分</span> 選修 Elective</button>
                     <div class="panel">
-                        <table class="table table-striped table-hover ">
+                        <table class="table table-striped table-hover elective">
                             <thead>
                                 <tr>
                                     <th scope="col" class="course_name">課程名稱</th>
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -251,6 +326,7 @@
                                     <td class="course_year_semester">1082</td>
                                     <td class="course_credit">3.0</td>
                                     <td class="course_score">100.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
                                 <!--計算畢業學分
                                 <tr>
@@ -264,7 +340,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-secondary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_humanities_general_course">3</span> 人文通識 Humanities General Course</button>
+                        <span class="badge badge-pill badge-light ">
+                            <span class="total_credit_humanities_general_course">3</span> 學分</span> 人文通識 Humanities General Course</button>
                     <div class="panel">
                         <table class="table table-striped table-hover ">
                             <thead>
@@ -273,6 +350,7 @@
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -281,6 +359,7 @@
                                     <td class="course_year_semester">1082</td>
                                     <td class="course_credit">3.0</td>
                                     <td class="course_score">100.0</td>
+                                    <td class="course_note"></td>
 
                                 </tr>
 
@@ -290,7 +369,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-secondary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_natural_sciences_general_course">3</span> 自然通識 Natural Sciences General Course</button>
+                        <span class="badge badge-pill badge-light ">
+                            <span class="total_credit_natural_sciences_general_course">3</span> 學分</span> 自然通識 Natural Sciences General Course</button>
                     <div class="panel">
                         <table class="table table-striped table-hover ">
                             <thead>
@@ -299,6 +379,7 @@
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -307,6 +388,7 @@
                                     <td class="course_year_semester">1082</td>
                                     <td class="course_credit">3.0</td>
                                     <td class="course_score">100.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
 
                             </tbody>
@@ -315,7 +397,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-secondary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_social_sciences_general_course">3</span> 社會通識 Social Sciences General Course</button>
+                        <span class="badge badge-pill badge-light ">
+                            <span class="total_credit_social_sciences_general_course">3</span> 學分</span> 社會通識 Social Sciences General Course</button>
                     <div class="panel">
                         <table class="table table-striped table-hover ">
                             <thead>
@@ -324,6 +407,7 @@
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -332,6 +416,7 @@
                                     <td class="course_year_semester">1082</td>
                                     <td class="course_credit">3.0</td>
                                     <td class="course_score">100.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -339,7 +424,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-secondary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_chinese_general_course">3</span> 中文通識 Chinese General Course</button>
+                        <span class="badge badge-pill badge-light ">
+                            <span class="total_credit_chinese_general_course">3</span> 學分</span> 中文通識 Chinese General Course</button>
                     <div class="panel">
                         <table class="table table-striped table-hover ">
                             <thead>
@@ -348,6 +434,7 @@
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -356,6 +443,7 @@
                                     <td class="course_year_semester">1082</td>
                                     <td class="course_credit">3.0</td>
                                     <td class="course_score">100.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -363,7 +451,8 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <button class="accordion bg-secondary text-white">
-                        <span class="badge badge-pill badge-warning total_credit_foreign_language_general_course">3</span> 外文通識 Foreign Language General Course</button>
+                        <span class="badge badge-pill badge-light ">
+                            <span class="total_credit_foreign_language_general_course">3</span> 學分</span> 外文通識 Foreign Language General Course</button>
                     <div class="panel">
                         <table class="table table-striped table-hover ">
                             <thead>
@@ -372,6 +461,7 @@
                                     <th scope="col" class="course_year_semester">學年期</th>
                                     <th scope="col" class="course_credit">學分</th>
                                     <th scope="col" class="course_score">成績</th>
+                                    <th scope="col" class="course_note">備註</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -380,6 +470,7 @@
                                     <td class="course_year_semester">1082</td>
                                     <td class="course_credit">3.0</td>
                                     <td class="course_score">100.0</td>
+                                    <td class="course_note"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -396,6 +487,40 @@
             <p>組員：林以珊、簡哲元、王子翔、劉煥澤、陳聖諺</p>
             <br>
         </footer>
+        <script>
+            var score = document
+                .getElementById("total_score")
+                .innerHTML;
+            console.log(score);
+            if (score >= 90) {
+                grade = "A+(4.3)"
+            } else if (score >= 85) {
+                grade = "A(4.0)"
+            } else if (score >= 80) {
+                grade = "A-(3.7)"
+            } else if (score >= 77) {
+                grade = "B+(3.3)"
+            } else if (score >= 73) {
+                grade = "B(3.0)"
+            } else if (score >= 70) {
+                grade = "B-(2.7)"
+            } else if (score >= 67) {
+                grade = "C+(2.3)"
+            } else if (score >= 63) {
+                grade = "C(2.0)"
+            } else if (score >= 60) {
+                grade = "C-(1.7)"
+            } else if (score >= 50) {
+                grade = "D(1.0)"
+            } else if (score >= 1) {
+                grade = "E(0.0)"
+            } else {
+                grade = "X(0.0)"
+            }
+            document
+                .getElementById("total_grade")
+                .innerHTML = grade;
+        </script>
 
         <script src="js/main.js"></script>
     </body>
