@@ -35,7 +35,7 @@
 
     </head>
     <body>
-    <!--沒有登入不能進來！！！！！-->
+        <!--沒有登入不能進來！！！！！-->
         <nav class="nav navbar navbar-light bg-light navbar-expand-lg" id="nav">
 
             <a class="navbar-brand" href="#"><img src="img/nccu_logo.png" width="30px"/> 國立政治大學選課系統</a>
@@ -55,7 +55,7 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="course_evaluation.html" >
                             <i class="fa fa-file"></i>
-                            <span >課程評價與考古題</span>
+                            <span >課程評價</span>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
@@ -110,17 +110,18 @@
     <table class="table table-striped table-hover rwd-table">
         <thead class="text-center">
             <tr>
-                <th class="order" scope="col">#</th>
-                <th class="course_id" scope="col">科目代碼</th>
-                <th rowspan="2" class="course_name" scope="col">科目名稱</th>
-                <th class="teacher_name" scope="col">教師</th>
-                <th class="course_time" scope="col">時間</th>
-                <th class="course_classroom" scope="col">教室</th>
-                <th class="course_credit" scope="col">學分</th>
-                <th class="course_status" scope="col">課程狀態</th>
-                <th class="course_selected_status" scope="col">選課狀態</th>
-                <th rowspan="2" class="course_mynote" scope="col">我的備註</th>
-                <th class="course_syllabus" scope="col">大綱</th>
+                <th class="order_title" scope="col">#</th>
+                <th class="course_id_title" scope="col">科目代碼</th>
+                <th rowspan="2" class="course_name_title" scope="col">科目名稱</th>
+                <th class="teacher_name_title" scope="col">教師</th>
+                <th class="course_time_title" scope="col">時間</th>
+                <th class="course_classroom_title" scope="col">教室</th>
+                <th class="course_credit_title" scope="col">學分</th>
+                <th class="course_status_title" scope="col">課程狀態</th>
+                <th class="course_selected_status_title" scope="col">選課狀態</th>
+                <th rowspan="2" class="course_mynote_title" scope="col">我的備註</th>
+                <th class="course_syllabus_title course_opinion_title course_test_title" scope="col">大綱｜教學意見｜考古題</th>
+
                 <th class="delete_from_list" scope="col">刪除</th>
             </tr>
         </thead>
@@ -147,12 +148,25 @@
                         </input>
                     </form>
                 </td>
-                <td data-th="大綱：" class="course_syllabus" >
-                    <button class="btn btn-round" onclick="location.href='https://newdoc.nccu.edu.tw/teaschm/1082/schmPrv.jsp-yy=108&smt=2&num=703025&gop=00&s=1.html'">
+                <td data-th="大綱｜教學意見｜考古題" class="course_syllabus course_opinion course_test" >
+                    <button class="btn btn-round" onclick="window.open('https://newdoc.nccu.edu.tw/teaschm/1082/schmPrv.jsp-yy=108&smt=2&num=703025&gop=00&s=1.html')">
                         <i class="text-primary fa fa-book"></i>
                         <!--syllabus 裡面太多東西了，就用現有的然後改url吧ＸＤ 可以用js的slice 或是python好像也有
                         https://newdoc.nccu.edu.tw/teaschm/1082/schmPrv.jsp-yy=108&smt=2&num=703025&gop=00&s=1.html-->
                     </button>
+                    <!--教學意見-->
+                    <a data-toggle="modal" data-target="#opinion">
+                        <button class="btn btn-round" >
+                            <!--onclick="location.href='course_opinion'" -->
+                            <i class="text-primary fa fa-comment"></i>
+                        </button>
+                    </a>
+                    <!--考古題-->
+                    <a download href="1082_703025001_test.pdf">
+                        <button class="btn btn-round" >
+                            <i class="text-primary fa fa-download"></i>
+                        </button>
+                    </a>
                 </td>
                 <td data-th="刪除" class="delete_from_list" >
 

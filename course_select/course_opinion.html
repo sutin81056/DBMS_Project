@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="shortcut icon" href="img/sm_nccu.png" type="image/png">
+        <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"/>
+        <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"/>
+        <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+        <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+        <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/gotop.css">
+
+        <title>課程意見</title>
+
+    </head>
+    <body>
+        <!--沒有登入不能進來！！！！！-->
+        <nav class="nav navbar navbar-light bg-light navbar-expand-lg" id="nav">
+
+            <a class="navbar-brand" href="#"><img src="img/nccu_logo.png" width="30px"/> 國立政治大學選課系統</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+
+                        <a class="nav-link" href="index.html" >
+                            <i class="fa fa-search"></i>
+                            <span >查詢課程</span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="course_evaluation.html" >
+                            <i class="fa fa-file"></i>
+                            <span >課程評價</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" id="navbarDropdownMenuLink">
+                            <i class="fa fa-user"></i>
+                            <span>個人頁面</span>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="list.html">追蹤清單</a>
+                            <a class="dropdown-item" href="timetable.html">我的課表</a>
+                            <a class="dropdown-item" href="check.html">修課檢核</a>
+                            <a class="dropdown-item" data-toggle="modal" data-target="#logIn">登入</a>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="card" >
+            <div class="card-body text-center" >
+                <div class="row" >
+                    <div class="col-lg-4" >
+                        <div style="vertical-align: middle;">
+                            <span class="badge badge-primary">科目代碼</span><br>
+                            <span class="course_id">703025001<!--科目代碼--></span></div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="vertical-align: middle;">
+                            <span class="badge badge-primary">科目名稱</span><br>
+                            <span class="course_name">資料庫系統<!--科目名稱--></span></div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div style="vertical-align: middle;">
+                            <span class="badge badge-primary">教師</span><br>
+                            <span class="teacher_name" >沈錳坤<!--教師姓名--></span></div>
+                    </div>
+                    <!--
+                    <div class="col-lg-3">
+                        <div style="vertical-align: middle;">
+                            <span class="badge badge-primary">分數</span><br>
+                            <span class="course_opinion_score" >100</span></div>
+                    </div>-->
+
+                </div >
+            </div>
+        </div>
+
+        <!--教學意見-->
+        <h2 class="mt-4 text-center">
+            <span class="badge badge-warning">教師同課程歷年教學意見</span></h2>
+        <ul class="pagination ">
+            <li>年度：</li>
+            <li>
+                <form>
+
+                    <div class="form-row align-items-center">
+                        <div class="col-auto my-1 mr-3">
+
+                            <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">年度</label>
+
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option value="0"selected>全部</option>
+                                <option value="108">1082</option>
+                                <option value="107">1072</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </form>
+
+            </li>
+            <li>
+                <div style="vertical-align: middle;">
+                    <span >該年度課程意見分數</span>：
+                        <span class="course_opinion_score" >100<!--課程意見分數--></span></div>
+            </li>
+        </ul>
+        <table class="table table-striped table-hover rwd-table">
+            <thead class="text-center">
+                <tr>
+                    <th class="order_title" scope="col">#</th>
+                    <th class="course_year_semester_title" scope="col">學年期</th>
+                    <th  class="course_name_title" scope="col">科目名稱</th>
+                    <th  class="course_opinion_title" scope="col">教學意見</th>
+                    <th class="course_test_title" scope="col">考古題</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th data-th="#" class="order" scope="row">1<!--用i讓他跑for迴圈--></th>
+                    <td data-th="學年期：" class="course_year_semester" >1082<!--學年期--></td>
+                    <td data-th="科目名稱："  class="course_name" >資料庫系統<!--科目名稱--></td>
+                    <td data-th="教學意見：" class="course_opinion text-left" >教學意見教學意見教學意見教學意見教學意見<!--教學意見--></td>
+                    <td data-th="考古題：" class="course_test">
+                        <!--不一定每個都有提供考古題-->
+                        <a download href="1082_703025001_test.pdf">
+                            <button class="btn btn-round" >
+                                <i class="text-primary fa fa-download"></i>
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <th data-th="#" class="order" scope="row">1<!--用i讓他跑for迴圈--></th>
+                    <td data-th="學年期：" class="course_year_semester" >1082<!--學年期--></td>
+                    <td data-th="科目名稱："  class="course_name" >資料庫系統<!--科目名稱--></td>
+                    <td data-th="教學意見：" class="course_opinion text-left" >教學意見教學意見教學意見教學意見教學意見<!--教學意見--></td>
+                    <td data-th="考古題：" class="course_test">
+                        <!--不一定每個都有提供考古題-->
+
+                    </td>
+                </tr>
+                <tr>
+                    <th data-th="#" class="order" scope="row">1<!--用i讓他跑for迴圈--></th>
+                    <td data-th="學年期：" class="course_year_semester" >1072<!--學年期--></td>
+                    <td data-th="科目名稱：" class="course_name" >資料庫系統<!--科目名稱--></td>
+                    <td data-th="教學意見：" class="course_opinion text-left" >教學意見教學意見教學意見教學意見教學意見<!--教學意見--></td>
+                    <td data-th="考古題：" class="course_test"></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="mt-4 mb-4">
+        <h2 class="mt-4  text-center">
+            <span class="badge badge-info">教師其他課程歷年教學意見</span></h2>
+
+        <table class="table table-striped table-hover rwd-table">
+            <thead class="text-center">
+                <tr>
+                    <th class="order_title" scope="col">#</th>
+                    <th class="course_year_semester_title" scope="col">學年期</th>
+                    <th class="course_name_title" scope="col">科目名稱</th>
+                    <th class="course_opinion_title" scope="col">教學意見</th>
+                    <th class="course_test_title" scope="col">考古題</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th data-th="#" class="order" scope="row">1<!--用i讓他跑for迴圈--></th>
+                    <td data-th="學年期：" class="course_year_semester" >1082<!--學年期--></td>
+                    <td data-th="科目名稱："  class="course_name" >演算法<!--科目名稱--></td>
+                    <td data-th="教學意見：" class="course_opinion text-left" >教學意見教學意見教學意見教學意見教學意見<!--教學意見--></td>
+                    <td data-th="考古題：" class="course_test"></td>
+                </tr>
+                <tr>
+                    <th data-th="#" class="order" scope="row">2<!--用i讓他跑for迴圈--></th>
+                    <td data-th="學年期：" class="course_year_semester" >1072<!--學年期--></td>
+                    <td data-th="科目名稱："  class="course_name" >演算法<!--科目名稱--></td>
+                    <td data-th="教學意見：" class="course_opinion text-left" >教學意見教學意見教學意見教學意見教學意見<!--教學意見--></td>
+                    <td data-th="考古題：" class="course_test"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--check-->
+
+        <footer class="mt-5  bg-dark text-light text-center">
+            <br>
+            <p>NCCU DBMS2020</p>
+            <p>組員：林以珊、簡哲元、王子翔、劉煥澤、陳聖諺</p>
+            <br>
+        </footer>
+        <script src="js/main.js"></script>
+    </body>
+</html>

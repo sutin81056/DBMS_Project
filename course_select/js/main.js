@@ -271,3 +271,15 @@ function updatePath() {
     }
 
 }
+
+function add_to_list() {
+    var course_name = document.getElementsByClassName("course_name");
+    var course_id = document.getElementsByClassName("course_id");
+    var add_to_list = document.getElementsByClassName("add_to_list");
+    for (let i = 0; i < add_to_list.length + 1; i++) {
+        add_to_list[i].addEventListener("click", function () {
+            alert(course_id[i].innerHTML + "：" + course_name[i].innerHTML + " 加入追蹤清單成功！");
+        });
+        console.log(course_name[i].innerHTML);
+    }
+}

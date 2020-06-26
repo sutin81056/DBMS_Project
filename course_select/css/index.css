@@ -49,7 +49,6 @@ body {
     font-size: 1rem;
 }
 
-
 .utility {
     display: flex;
     justify-content: center;
@@ -61,13 +60,10 @@ a:hover {
     text-decoration: none;
 }
 
-
 .p-relative {
     position: relative;
     display: inline-block;
 }
-
-
 
 .p-relative::after {
     content: 'v';
@@ -165,12 +161,10 @@ select.dropdown::-ms-expand {
     font-size: 1rem;
 }
 
-
 .ck-button:hover {
     background: gray;
     color: #fff;
     cursor: pointer;
-
 }
 
 .submit {
@@ -221,15 +215,11 @@ select.dropdown::-ms-expand {
 }
 
 .ck-button input:checked+span {
-
     background-color: #3069fd;
     color: #fff;
 }
 
-
-
-.ck-button-box,
-.ck-button-box span {
+.ck-button-box, .ck-button-box span {
     width: 5rem;
     height: 2.5rem;
 }
@@ -237,18 +227,13 @@ select.dropdown::-ms-expand {
 /*  */
 
 @media screen and (min-width: 576px) {
-
-
     .three {
         width: 14vw;
     }
-
     .full-input {
         width: calc(100%);
     }
 }
-
-
 
 .pagination {
     display: flex;
@@ -256,27 +241,19 @@ select.dropdown::-ms-expand {
     align-items: center;
 }
 
-
-.course_credit,
-.course_syllabus,
-.add_to_list,
-.course_detail {}
+.course_credit, .course_syllabus, .add_to_list, .course_detail {}
 
 .rwd-table {
     background: #fff;
     overflow: hidden;
     font-size: 0.8rem;
-
 }
 
 .rwd-table tr:nth-of-type(2n) {
     background: #eee;
 }
 
-.rwd-table th,
-.rwd-table td,
-.timetable th,
-.timetable td {
+.rwd-table th, .rwd-table td, .timetable th, .timetable td {
     margin: 0.5em 1em;
 }
 
@@ -292,13 +269,13 @@ select.dropdown::-ms-expand {
     max-width: screen;
 }
 
-.rwd-table th,
-.timetable th {
+.rwd-table th, .timetable th {
+    vertical-align: middle;
     display: none;
 }
 
-.rwd-table td,
-.timetable td {
+.rwd-table td, .timetable td {
+    vertical-align: middle;
     display: block;
 }
 
@@ -309,43 +286,23 @@ select.dropdown::-ms-expand {
     display: inline-block;
 }
 
-
-
-.rwd-table th,
-.rwd-table td {
+.rwd-table th, .rwd-table td {
     text-align: center;
 }
 
-.rwd-table th,
-.timetable th,
-.rwd-table td:before {
+.rwd-table th, .timetable th, .rwd-table td:before {
     text-align: center;
     color: #3069fd;
     font-weight: bold;
 }
 
-.timetable th,
-.timetable td {
+.timetable th, .timetable td {
     text-align: center;
     display: table-cell;
 }
 
-.order,
-.course_year_semester,
-.course_name,
-.course_name,
-.teacher_name,
-.course_time,
-.course_credit,
-.course_unit,
-.course_syllabus,
-.btn-round,
-.add_to_list,
-.course_detail,
-.course_score,
-.course_graduate {
+.order, .course_year_semester, .course_name, .course_name, .teacher_name, .course_time, .course_credit, .course_unit, .course_syllabus, .btn-round, .add_to_list, .course_detail, .course_score, .course_graduate {
     text-align: center;
-
 }
 
 .course_info {
@@ -356,39 +313,28 @@ select.dropdown::-ms-expand {
     .navbar-brand {
         font-size: 1.25rem;
     }
-
     .rwd-table {
         text-align: left;
     }
-
     .rwd-table td:before {
         display: none;
     }
-
-    .rwd-table th,
-    .rwd-table td {
+    .rwd-table th, .rwd-table td {
         display: table-cell;
         padding: 0.25em 0.5em;
     }
-
-    .rwd-table th:first-child,
-    .rwd-table td:first-child {
+    .rwd-table th:first-child, .rwd-table td:first-child {
         padding-left: 0;
     }
-
-    .rwd-table th:last-child,
-    .rwd-table td:last-child {
+    .rwd-table th:last-child, .rwd-table td:last-child {
         padding-right: 0;
     }
-
-    .rwd-table th,
-    .rwd-table td {
+    .rwd-table th, .rwd-table td {
         padding: 1em !important;
     }
 }
 
 /* list group*/
-
 
 .accordion {
     font-size: 1rem;
@@ -404,8 +350,6 @@ select.dropdown::-ms-expand {
     margin-top: 10px;
     display: block;
     margin: auto;
-
-
 }
 
 .accordion:after {
@@ -425,8 +369,7 @@ select.dropdown::-ms-expand {
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 
-.active,
-.accordion:hover {
+.active, .accordion:hover {
     color: white;
     background-color: var(--info);
 }
